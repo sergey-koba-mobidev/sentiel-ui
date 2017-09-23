@@ -10,6 +10,9 @@ gem 'pg'
 gem 'jquery-hanami'
 gem 'hanami-bootstrap'
 
+# S3
+gem 'aws-sdk'
+
 
 group :development do
   # Code reloading

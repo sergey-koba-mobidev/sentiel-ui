@@ -4,8 +4,10 @@
   <form class="form-inline">
     <div class="form-group">
       <label class="sr-only" for="Sentinel">Name</label>
-      <select class="form-control">
-        <option>serg</option>
+      <select class="form-control" name="sentinel">
+        <% sentinels.each do |sentinel| %>
+          <option value="<%= sentinel %>"><%= sentinel %></option>
+        <% end %>
       </select>
     </div>
     <button type="submit" class="btn btn-primary">View Sentinel</button>
