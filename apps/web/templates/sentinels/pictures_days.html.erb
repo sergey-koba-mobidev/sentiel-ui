@@ -1,0 +1,8 @@
+<div class="jumbotron">
+  <h1>Choose Day for Sentinel <%= sentinel %></h1>
+  <div class="list-group">
+    <% days.each do |day| %>
+        <a href="<%= Web.routes.url(:sentinel_pictures_day, sentinel_name: sentinel, day: day) %>" class="list-group-item"><%= day %></a>
+    <% end %>
+  </div>
+</div>

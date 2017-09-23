@@ -5,3 +5,7 @@ UI for Sentiel
 - `docker-compose build`
 - `docker-compose run sentiel-ui bundle exec hanami db prepare`
 - go to [http://localhost:2300](http://localhost:2300)
+
+## TODO
+- rename python script to `sentinel`
+- add image enlarge

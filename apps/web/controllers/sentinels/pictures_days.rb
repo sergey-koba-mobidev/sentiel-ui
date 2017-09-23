@@ -1,9 +1,10 @@
 require 'aws-sdk'
 
 module Web::Controllers::Sentinels
-  class Choose
+  class PicturesDays
     include Web::Action
-    expose :sentinels
+    expose :sentinel
+    expose :days
 
     def call(params)
       # Hanami.logger.debug ENV['REGION_NAME']
@@ -13,9 +14,10 @@ module Web::Controllers::Sentinels
           secret_access_key: ENV['AWS_SECRET_ACCESS_KEY'],
           endpoint: ENV['ENDPOINT_URL']
       )
-      @sentinels = s3.list_objects(bucket: ENV['BUCKET'], prefix: "#{ENV['PREFIX']}/", delimiter: '/')
+      @sentinel = params[:sentinel_name]
+      @days = s3.list_objects(bucket: ENV['BUCKET'], prefix: "#{ENV['PREFIX']}/#{@sentinel}/pictures/", delimiter: '/')
                        .common_prefixes
-                       .map{ |c| c.prefix.gsub("#{ENV['PREFIX']}/", '').gsub('/', '') }
+                       .map{ |c| c.prefix.gsub("#{ENV['PREFIX']}/#{@sentinel}/pictures/", '').gsub('/', '') }
     end
   end
 end

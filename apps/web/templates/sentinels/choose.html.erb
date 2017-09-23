@@ -1,16 +1,8 @@
 <div class="jumbotron">
   <h1>Choose your Sentinel</h1>
-  <p>
-  <form class="form-inline">
-    <div class="form-group">
-      <label class="sr-only" for="Sentinel">Name</label>
-      <select class="form-control" name="sentinel">
-        <% sentinels.each do |sentinel| %>
-          <option value="<%= sentinel %>"><%= sentinel %></option>
-        <% end %>
-      </select>
-    </div>
-    <button type="submit" class="btn btn-primary">View Sentinel</button>
-  </form>
-  </p>
+  <div class="list-group">
+    <% sentinels.each do |sentinel| %>
+        <a href="<%= Web.routes.url(:sentinel_pictures_days, sentinel_name: sentinel) %>" class="list-group-item"><%= sentinel %></a>
+    <% end %>
+  </div>
 </div>
