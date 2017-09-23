@@ -1,0 +1,35 @@
+version: "2"
+services:
+  sentiel-ui:
+    build: .
+    volumes:
+      - .:/app
+      - bundlecache:/usr/local/bundle
+    stdin_open: true
+    tty: true
+    command: bundle exec hanami server --host 0.0.0.0
+    ports:
+      - "2300:2300"
+    links:
+      - db
+    environment:
+      POSTGRES_USER:
+      POSTGRES_PASSWORD:
+      POSTGRES_DB:
+      DATABASE_URL:
+      WEB_SESSIONS_SECRET:
+      SERVE_STATIC_ASSETS:
+
+  db:
+    image: postgres:latest
+    volumes:
+      - /var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER:
+      POSTGRES_PASSWORD:
+      POSTGRES_DB:
+
+volumes:
+  bundlecache:

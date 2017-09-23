@@ -1,0 +1,4 @@
+project=sentiel_ui
+architecture=container
+test=minitest
+template=erb
