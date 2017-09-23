@@ -1,10 +1,15 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Web</title>
+    <title>Sentinel</title>
     <%= favicon %>
+    <%= javascript 'jquery' %>
+    <%= javascript 'bootstrap' %>
+    <%= stylesheet 'bootstrap' %>
   </head>
   <body>
-    <%= yield %>
+    <div class="container">
+      <%= yield %>
+    </div>
   </body>
 </html>
