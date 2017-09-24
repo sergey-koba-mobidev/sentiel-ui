@@ -8,4 +8,7 @@ UI for Sentiel
 
 ## TODO
 - rename python script to `sentinel`
-- add image enlarge
+- pagination
+- auth protection
+- database
+- rename service to `sentinel-ui`
