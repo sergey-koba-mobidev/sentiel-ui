@@ -1,6 +1,6 @@
 version: "2"
 services:
-  sentiel-ui:
+  sentinel-ui:
     build: .
     volumes:
       - .:/app
